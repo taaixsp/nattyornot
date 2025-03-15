@@ -1,32 +1,37 @@
 # **FakeOrNatty - Stock Predictions Project** 🚀📈
 
 ## 📒 **Description**
-This project explores the challenge of distinguishing between real and AI-generated stock price movements. Using machine learning, I classify time series data to determine whether it follows authentic market patterns or is purely synthetic.
+This project explores the challenge of predicting stock movements using a combination of real financial data and synthetic data augmentation techniques. The goal is to enhance model performance in the presence of class imbalance by leveraging techniques such as SMOTE (Synthetic Minority Over-sampling Technique), undersampling, and hyperparameter tuning with XGBoost.
 
 ## 🤖 **Technologies Used**
-**Generative AI & Synthetic Data:** Random Walk, ARIMA, Monte Carlo Simulation
+**Generative AI & Synthetic Data:** SMOTE for generating synthetic data to balance the dataset.
 
-**Machine Learning:** Scikit-Learn, XGBoost, Random Forest
+**Machine Learning:** XGBoost with GridSearchCV for hyperparameter tuning.
 
-**Data & Processing:** Pandas, NumPy, Yahoo Finance API
+**Data & Processing:** Python (pandas, numpy, scikit-learn), Yahoo Finance API for data extraction.
 
-**Visualization:** Matplotlib, Seaborn, Plotly
+**Visualization:** Matplotlib, Seaborn for analyzing performance and stock trends.
 
 ## 🧐 **Creation Process**
 **Real Data Collection 📊:** Extracted historical stock prices using the Yahoo Finance API.
 
-**Synthetic Data Generation 🤖:** Simulated artificial stock trends with random walk models.
+**Synthetic Data Generation 🤖:** Applied SMOTE to balance the dataset by generating synthetic samples for the minority class.
 
-**Feature Engineering 🛠️:** Built statistical indicators like moving averages, volatility, and momentum.
+**Feature Engineering 🛠️:** Selected relevant features, removed unnecessary columns, and ensured correct data formatting.
 
-**Model Training & Evaluation 🎯:** Trained a classifier to differentiate real vs. synthetic trends.
+**Model Training & Evaluation 🎯:** Trained an XGBoost model, performed hyperparameter tuning with GridSearchCV, and evaluated performance using precision, recall, F1-score, and confusion matrix.
 
 ## 🚀 **Results**
-**Accuracy:** The model achieved high precision in detecting fake vs. real stock data.
+**Accuracy:** Improved model accuracy and recall for the minority class due to synthetic data balancing and optimized hyperparameters.
 
-**Key Insights:** Real stock movements tend to have specific volatility patterns, while synthetic data often lacks autocorrelation.
+**Key Insights:** 
+- SMOTE and undersampling significantly improved model fairness.
 
-**Visualization:** Plotted real vs. synthetic trends to highlight differences.
+- GridSearchCV identified the best hyperparameters, optimizing learning rate, max depth, and class weighting.
+
+- The model showed improved precision-recall tradeoff, crucial for financial applications.
+
+**Visualization:** Confusion matrix, feature importance plots, and stock trend analysis to validate model performance.
 
 ## 💭 **Thoughts on the Project**
-Building a "natty" financial dataset was challenging because markets are highly unpredictable—sometimes, real stock movements look just as random as synthetic ones! AI can mimic trends well, but capturing human-driven market psychology remains complex.
+Building a "natty" financial dataset was challenging because markets are highly unpredictable—sometimes. This project highlights the power of synthetic data generation in handling class imbalance, especially in financial datasets where minority class predictions are crucial. The integration of SMOTE, undersampling, and hyperparameter tuning with XGBoost resulted in a more balanced and robust stock prediction model. Future improvements could involve experimenting with deep learning approaches and additional financial indicators for feature engineering.
